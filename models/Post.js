@@ -13,4 +13,6 @@ date: {
    default: Date.now
 }  
 });
+
+
 module.exports = mongoose.model("Posts", PostSchema);
