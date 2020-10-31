@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
     
 
 });
-
+//submit a post
 router.post("/", async (req, res) => {
    const post = new Post({
        title: req.body.title,
@@ -32,6 +32,16 @@ router.post("/", async (req, res) => {
    }
 
 
+
+});
+//specific post
+router.get("/:postId", async (req, res) => {
+    try{
+   const post = await Post.findById(req.params.postId);
+   res.json(post);
+    }catch(err) {
+     res.json({message:err});
+    }
 
 });
 
